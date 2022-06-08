@@ -1,9 +1,8 @@
 ---
-name: Requerimiento de Interfaz
-about: Provee de una nueva funcionalidad a la interfaz de la aplicación - Desarrollo
-  Frontend
-title: Desarrollo Frontend
-labels: 'Desarrollo: Interfaz, Mejora'
+name: Requerimiento de código
+about: provee de una nueva funcionalidad al código de la aplicación - Desarrollo Backend
+title: Desarrollo Backend
+labels: 'Desarrollo: Código, Mejora'
 assignees: ''
 
 ---
