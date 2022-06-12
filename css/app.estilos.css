@@ -1,0 +1,79 @@
+/*=============================================================================================
+Escritorio (XL para todos os dispositivos con resolución mayor a 1336px en adelante
+=============================================================================================*/
+@media (max-width: 1920px) and (min-width:1400px) {
+    .description {
+        font-size: x-large;
+    }
+    .navbar {
+        font-size: xx-large;
+    }
+    .logo-label {
+        width: 85%;
+    }
+    .navbar-brand img {
+        width: 80%;
+    }
+}
+/*=============================================================================================
+Laptop (XL para todos os dispositivos con resolución mayor a 1336px en adelante
+=============================================================================================*/
+@media (max-width: 1399px) and (min-width: 1200px){
+    .navbar-brand img {
+    width: 45%;
+    }
+    .logo-label {
+    width: 80%;
+    } 
+}
+
+
+/*==============================================================================================
+Tablet horizontal (LG para todos os dispositivos con resolución mayor a 1024px en adelante
+==============================================================================================*/
+@media (max-width: 1199px) and (min-width: 992px){
+    .navbar-brand img {
+        width: 45%;
+    }
+    .logo-label {
+        width: 100%;
+        padding-top: 30px;
+    }
+}
+/*==============================================================================================
+Tablet vertical (MD para todos os dispositivos con resolución mayor a 768px en adelante
+==============================================================================================*/
+@media (max-width: 991px) and (min-width: 768px){
+    .navbar-brand img {
+        width: 45%;
+    }
+    .logo-label {
+        width: 80%;
+    }
+}
+/*==============================================================================================
+Móvil horizontal (SM para todos os dispositivos con resolución mayor a 576px en adelante
+==============================================================================================*/
+@media (max-width: 767px) and (min-width: 576px){
+    .navbar-brand img {
+        width: 35%;
+    }
+    .logo-label {
+        width: 100%;
+    }
+}
+/*==============================================================================================
+Móvil vertical (para todos os dispositivos con resolución mayor a 320px en adelante
+==============================================================================================*/
+@media (max-width: 575px){
+    .navbar-brand {
+        width: 75%;
+    }
+    .navbar-brand img {
+        width: 45%;
+    }
+    .logo-label {
+        width: 100%;
+        padding-top: 0px;
+    }
+}
