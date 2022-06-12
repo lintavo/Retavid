@@ -105,6 +105,90 @@
     </nav>
     <!-- Final de menú principal -->
 
+    <!-- Info página principal -->
+    <div class="container-fluid mt-2 collapse show" id="home-section">
+      <div class="row">
+        <div class="" id="info-principal">
+          <div class="card card-body">
+            <div class="row">
+              <div class="col-12 pt-0 col-md-12 pt-sm-0 pt-md-0 col-lg-5 col-xl-6 pt-xl-0 text-center">
+                <img src="img/retavid-logo-slogan.png" alt="retavid-logo-label" class="img-fluid logo-label" srcset="">
+              </div>
+              <div class="col-md-12 col-lg-7 col-xl-6">
+                <p class="p3 align-middle description">
+                  Es una aplicación en tiempo real que tiene como propósito principal, contribuir a la seguridad industrial 
+                  en el rubro del manejo, almacenanaje y distribuciónde gas propano en El Salvador, esta, realiza una lectura 
+                  en tiempo real de un dispositivo <strong>IoT</strong> en una locación en específico, este dispositivo se 
+                  encuentra equipado con sensores de GLP (Gas licuado de petróleo) y CO (Monóxido de carbono) y envía periódicamente 
+                  lecturas en ppa (partes por millón), de esta forma si se detecta una concentración de cualquiera de éstos 
+                  compuestos, se puede ver la variación a través de la aplicación <strong>RETAVID</strong> e intervenir de inmediato 
+                  para evitar un siniestro en cualquiera de los centros antes referidos.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <h3 class="text-center"><i class="bi bi-info-circle"></i> Ayuda sobre las herramientas</h3>
+        
+        <div class="row text-center">
+          <!-- Botones OffCanvas -->
+          <!-- Botón monitoreo -->
+          <button class="btn col-4 border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#monitoring" aria-controls="monitoring"><h1><i class="bi bi-speedometer"></i><p> Monitoreo</p></h1></button>
+          <!-- Botón análisis -->
+          <button class="btn col-4 border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#p-analisis" aria-controls="p-analisis"><h1><i class="bi bi-graph-up"></i><p> Análisis</p></h1></button>
+          <!-- Botón datos -->
+          <button class="btn col-4 border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#p-datos" aria-controls="p-datos"><h1><i class="bi bi-table"></i><p> Datos</p></h1></button>
+        </div>
+        <!-- Paneles offcanvas -->
+        <!-- Panel monitoreo -->
+        <div class="offcanvas offcanvas-bottom" tabindex="-1" id="monitoring" aria-labelledby="monitoringLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="monitoringLabel"><i class="bi bi-speedometer"></i> Monitoreo</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body small">
+            <p>
+              Esta es la herramienta principal, permite visulizar dos controles que muestran los niveles 
+              tanto de GLP como CO y muestran el uĺtimo registro enviado por el dispositivo IoT, el indicador 
+              de cada uno de los controles tiene tres niveles, con los colores del semáforo, para indicar si 
+              la lectura se encuentra en un nivel aceptable (<i class="bi bi-question-diamond-fill text-success"></i> 
+              color verde), un nivel de alerta (<i class="bi bi-question-diamond-fill text-warning"></i> color naranja) 
+              o si la lectura se ubica en un nivel muy peligroso (<i class="bi bi-question-diamond-fill text-danger"></i> color rojo).
+            </p>
+          </div>
+        </div>
+        <!-- Panel Análisis -->
+        <div class="offcanvas offcanvas-bottom" tabindex="-1" id="p-analisis" aria-labelledby="p-analisisLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="p-analisisLabel"><i class="bi bi-graph-up"></i> Análisis</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body small">
+            <p>
+              Esta herramienta muestra un gráfico de líneas, en una de ellas se muestran los registros diarios 
+              de GLP y CO debidamente ubicados en el tiempo de acuerdo a las lecturas enviadas por el dispositivo 
+              IoT, de esta forma puede evaluarse como hoscila la lectura de los mismos durante el día.
+            </p>
+          </div>
+        </div>
+        <!-- Panel Datos -->
+        <div class="offcanvas offcanvas-bottom" tabindex="-1" id="p-datos" aria-labelledby="p-datosLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="p-datosLabel"><i class="bi bi-table"></i> Datos</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body small">
+            <p>
+              Esta herramienta presenta la totalidad de los datos históricos enviados por el dispositivo IoT 
+              en forma de una tabla que permite hacer búsquedas,ordenar resultados y exportar la información 
+              a diferentes formatos.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Fin sección Info página principal -->
+
     <!-- JavaScript personalizado de la aplicación -->   
     <script type="module" src="js/app.script.js"></script>
 </body>
