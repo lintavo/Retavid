@@ -178,13 +178,16 @@ llenarTabla = function() {
     $('#historico').DataTable({
         data: table,
         columns: [
-            { title: 'PLG' },
-            { title: 'CO' },
-            { title: 'Fecha' },
-            { title: 'Hora' },
+            { title: '<i class="bi bi-speedometer"></i> PLG' },
+            { title: '<i class="bi bi-speedometer"></i> CO' },
+            { title: '<i class="bi bi-calendar-date"></i> Fecha' },
+            { title: '<i class="bi bi-clock"></i> Hora' },
         ],
         retrieve: true,
         paging: true,
+        language: {
+            url: 'https://cdn.datatables.net/plug-ins/1.12.1/i18n/es-ES.json'
+        },
         dom: 'Bfrtip',
         buttons: [
             'copy', 'excel', 'pdf'
