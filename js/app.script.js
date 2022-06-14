@@ -8,10 +8,13 @@ var chartLinesData1 = ['PLG'];
 var chartLinesData2 = ['CO'];
 var chartLinesX = [];
 var chartLines = [];
+var table = [];
+var dataset;
 var lecterPLG = ['PLG'];
 var lecterCO = ['CO'];
 var CO;
 var PLG;
+var byetable;
 
 /* Recorrido de la página */
 $(document).ready(function() {
@@ -21,6 +24,7 @@ $(document).ready(function() {
     addChartLine();
     addChartPLG();
     addChartCO();
+    //llenarTabla();
     
 });
 
@@ -64,6 +68,8 @@ requestData = function(){
         var arr1;
         var arr2;
         var arr3;
+        var regt;
+        //hakai();
 
         for(IoT in lecter){
             var history = lecter[IoT].historico;
@@ -77,14 +83,16 @@ requestData = function(){
 
                 arr3 = history[any].fecha + ' ' + history[any].hora;
                 chartLinesX.push(arr3);
-            
+ 
+                regt = [history[any].PLG, history[any].CO, history[any].fecha, history[any].hora];
+                table.push(regt);
             }
+            llenarTabla();
             chartLines.push(chartLinesData1);
             chartLines.push(chartLinesData2);     
             chart.load({
                 columns: chartLines
             });
-            console.log(chartLines);
         }
         
         
@@ -164,3 +172,36 @@ addChartCO = function() {
     });
     console.log(lecterCO);
 };
+
+/* LLenar tabla con datos */
+llenarTabla = function() {
+    $('#historico').DataTable({
+        data: table,
+        columns: [
+            { title: 'PLG' },
+            { title: 'CO' },
+            { title: 'Fecha' },
+            { title: 'Hora' },
+        ],
+        retrieve: true,
+        paging: true,
+        dom: 'Bfrtip',
+        buttons: [
+            'copy', 'excel', 'pdf'
+        ],
+        responsive: true
+      });
+};
+
+/* Destruir tabla creada */
+/* hakai = function() {
+    byetable = $('#historico').DataTable( {
+        paging: false
+    } );
+     
+    byetable.destroy();
+     
+    byetable = $('#example').DataTable( {
+        searching: false
+    } );
+}; */
