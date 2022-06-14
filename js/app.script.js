@@ -190,7 +190,31 @@ llenarTabla = function() {
         },
         dom: 'Bfrtip',
         buttons: [
-            'copy', 'excel', 'pdf'
+            {
+                extend: 'copyHtml5',
+                text: '<i class="bi bi-clipboard2-plus"></i> Copiar',
+                titleAttr: 'Copiar datos'
+            },
+            {
+                extend: 'csvHtml5',
+                text: '<i class="bi bi-filetype-csv"></i> CSV',
+                titleAttr: 'Descargar archivo csv'
+            },
+            {
+                extend: 'excelHtml5',
+                text: '<i class="bi bi-file-spreadsheet"></i> Excel',
+                titleAttr: 'Descargar hoja de excel'
+            },
+            {
+                extend: 'pdfHtml5',
+                text: '<i class="bi bi-filetype-pdf"></i> PDF',
+                titleAttr: 'Descargar PDF'
+            },
+            {
+                extend: 'print',
+                text: '<i class="bi bi-printer"></i> Imprimir',
+                titleAttr: 'Imprimir datos de la tabla'
+            },
         ],
         responsive: true
       });
