@@ -3,6 +3,7 @@ var myFirebaseRef;
 /* Gráfico de líneas */
 var chart;
 var chartPLG;
+var chartCO;
 var chartLinesData1 = ['PLG'];
 var chartLinesData2 = ['CO'];
 var chartLinesX = [];
@@ -19,6 +20,7 @@ $(document).ready(function() {
     requestData();
     addChartLine();
     addChartPLG();
+    addChartCO();
     
 });
 
@@ -50,6 +52,10 @@ requestData = function(){
 
         chartPLG.load({
             columns: lecterPLG
+        });
+
+        chartCO.load({
+            columns: lecterCO
         });
 
         var arr1;
@@ -113,7 +119,7 @@ addChartPLG = function() {
       chartPLG = c3.generate({
         bindto: '#graph-plg',
         data: {
-            columns: [ lecterPLG],
+            columns: [ lecterPLG ],
             type: 'gauge'
         },
         gauge: {
@@ -130,4 +136,28 @@ addChartPLG = function() {
         }
       });
       console.log(lecterPLG);
+};
+
+/* Función para gráfica de monitoreo PGL */
+addChartCO = function() {
+    chartCO = c3.generate({
+      bindto: '#graph-co',
+      data: {
+          columns: [ lecterCO ],
+          type: 'gauge'
+      },
+      gauge: {
+          show: true,
+          min: 0,
+          max: 130,
+          units: 'PPM'
+      },
+      color: {
+          pattern: ['#47704c', '#f59e01', '#e61348'],
+          threshold: {
+              values: [70, 100, 130]
+          }
+      }
+    });
+    console.log(lecterCO);
 };
