@@ -2,36 +2,24 @@
 var myFirebaseRef;
 /* Gráfico de líneas */
 var chart;
-var chartx;
-var chartd1;
-var chartd2;
-var chartLinesData1 = ['PGL'];
+var chartPLG;
+var chartLinesData1 = ['PLG'];
 var chartLinesData2 = ['CO'];
 var chartLinesX = [];
 var chartLines = [];
-var chartLinesCategory = [];
-var test = [
-    ['x', '2010', '2011', '2012', '2013', '2014', '2015'],
-    ['data1', 30, 200, 100, 400, 150, 250],
-    ['data2', 130, 340, 200, 500, 250, 350]
-];
-
+var lecterPLG = ['PLG'];
+var lecterCO = ['CO'];
 var CO;
 var PLG;
 
 /* Recorrido de la página */
 $(document).ready(function() {
     myFirebaseRef = new Firebase("https://gasesutec-default-rtdb.firebaseio.com/");
-    $('#inicio').click(viewHome);
-    $('#monitoreo').click(viewMonitoreo);
-    $('#monitoreo').click(addChartPGL);
-    $('#analisis').click(viewAnalisis);
-    $('#datos').click(viewDatos);
-    $('#contacto').click(viewContact);
+    
     requestData();
-    //addChartLine();
-    //addChartPGL();
-    //console.log(test());
+    addChartLine();
+    addChartPLG();
+    
 });
 
 /* Función requestData */
@@ -50,15 +38,23 @@ requestData = function(){
         chartLinesData1 = ['PLG'];
         chartLinesData2 = ['CO'];
         chartLinesX = [];
+        lecterPLG = [];
+        lecterCO = [];
+
         for(ultimate in lecter){
             CO = (lecter[ultimate].ultimoDato.CO);
             PLG = (lecter[ultimate].ultimoDato.PLG);
         }
+        lecterPLG.push(['PLG', Number(PLG)]);
+        lecterCO.push(['CO', Number(CO)]);
+
+        chartPLG.load({
+            columns: lecterPLG
+        });
 
         var arr1;
         var arr2;
         var arr3;
-        var arr4;
 
         for(IoT in lecter){
             var history = lecter[IoT].historico;
@@ -74,15 +70,12 @@ requestData = function(){
                 chartLinesX.push(arr3);
             
             }
-            //console.log(chartLinesData1, chartLinesData2, chartLinesX);
-            //chartLinesCategory.push(chartLinesX);
             chartLines.push(chartLinesData1);
             chartLines.push(chartLinesData2);     
             chart.load({
                 columns: chartLines
             });
             console.log(chartLines);
-            console.log(test);
         }
         
         
@@ -107,80 +100,34 @@ addChartLine = function() {
                 type: 'category',
                 categories: chartLinesX,
                 show: false,
-                rotated: true,
+                rotated: false,
                 label: 'Fecha y hora de la lectura'
             }
         }
     });
-    console.log(chartLinesData1);
+    //console.log(chartLinesData1);
 };
 
 /* Función para gráfica de monitoreo PGL */
-addChartPGL = function() {
-      google.charts.load('current', {'packages':['gauge']});
-      google.charts.setOnLoadCallback(drawChart);
-
-      function drawChart() {
-
-        var data = google.visualization.arrayToDataTable([
-          ['Label', 'Value'],
-          ['PLG', PLG],
-        ]);
-
-        var options = {
-          width: 400, height: 120,
-          redFrom: 90, redTo: 100,
-          yellowFrom:75, yellowTo: 90,
-          minorTicks: 5
-        };
-
-        var chart = new google.visualization.Gauge(document.getElementById('graph-plg'));
-
-        chart.draw(data, options);
-}};
-
-/* Función botón inicio */
-viewHome = function() {
-    $('#monitoreo-tool-section').removeClass('show');
-    $('#analytics').removeClass('show');
-    $('#data').removeClass('show');
-    $('#contacts').removeClass('show');
-    $('#home-section').addClass('show');
-};
-
-/* Función botón monitoreo */
-viewMonitoreo = function() {
-    $('#home-section').removeClass('show');
-    $('#analytics').removeClass('show');
-    $('#contacts').removeClass('show');
-    $('#data').removeClass('show');
-    $('#monitoreo-tool-section').addClass('show');
-};
-
-/* Función botón analisis */
-viewAnalisis = function() {
-    $('#home-section').removeClass('show');
-    $('#monitoreo-tool-section').removeClass('show');
-    $('#data').removeClass('show');
-    $('#contacts').removeClass('show');
-    addChartLine();
-    $('#analytics').addClass('show');
-};
-
-/* Función botón datos */
-viewDatos = function() {
-    $('#home-section').removeClass('show');
-    $('#monitoreo-tool-section').removeClass('show');
-    $('#analytics').removeClass('show');
-    $('#contacts').removeClass('show');
-    $('#data').addClass('show');
-};
-
-/* Función botón contacto */
-viewContact = function() {
-    $('#home-section').removeClass('show');
-    $('#monitoreo-tool-section').removeClass('show');
-    $('#analytics').removeClass('show');
-    $('#data').removeClass('show');
-    $('#contacts').addClass('show');
+addChartPLG = function() {
+      chartPLG = c3.generate({
+        bindto: '#graph-plg',
+        data: {
+            columns: [ lecterPLG],
+            type: 'gauge'
+        },
+        gauge: {
+            show: true,
+            min: 0,
+            max: 1300,
+            units: 'PPM'
+        },
+        color: {
+            pattern: ['#47704c', '#f59e01', '#e61348'],
+            threshold: {
+                values: [700, 1000, 1300]
+            }
+        }
+      });
+      console.log(lecterPLG);
 };
