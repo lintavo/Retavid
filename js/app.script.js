@@ -50,6 +50,9 @@ requestData = function(){
         lecterPLG.push(['PLG', Number(PLG)]);
         lecterCO.push(['CO', Number(CO)]);
 
+        $('#plg-ultimate').html(lecter[ultimate].ultimoDato.fecha + ' ' + lecter[ultimate].ultimoDato.hora);
+        $('#co-ultimate').html(lecter[ultimate].ultimoDato.fecha + ' ' + lecter[ultimate].ultimoDato.hora);
+
         chartPLG.load({
             columns: lecterPLG
         });
