@@ -193,27 +193,44 @@ llenarTabla = function() {
             {
                 extend: 'copyHtml5',
                 text: '<i class="bi bi-clipboard2-plus"></i> Copiar',
-                titleAttr: 'Copiar datos'
+                titleAttr: 'Copiar datos',
+                footer: true
             },
             {
                 extend: 'csvHtml5',
                 text: '<i class="bi bi-filetype-csv"></i> CSV',
-                titleAttr: 'Descargar archivo csv'
+                titleAttr: 'Descargar archivo csv',
+                footer: true
             },
             {
                 extend: 'excelHtml5',
                 text: '<i class="bi bi-file-spreadsheet"></i> Excel',
-                titleAttr: 'Descargar hoja de excel'
+                titleAttr: 'Descargar hoja de excel',
+                footer: true
             },
-            {
+            /* {
                 extend: 'pdfHtml5',
                 text: '<i class="bi bi-filetype-pdf"></i> PDF',
-                titleAttr: 'Descargar PDF'
+                titleAttr: 'Descargar PDF',
+                footer: true
+            }, */
+            {
+                text: '<i class="bi bi-filetype-json"></i> JSON',
+                action: function ( e, dt, button, config ) {
+					var data = dt.buttons.exportData();
+					$.fn.dataTable.fileSave(
+						new Blob( [ JSON.stringify( data ) ] ),
+						'Retavid - Sistema de monitoreo de gas propano.json'
+					);
+				},
+                titleAttr: 'Descargar archivo JSON',
+                footer: true
             },
             {
                 extend: 'print',
                 text: '<i class="bi bi-printer"></i> Imprimir',
-                titleAttr: 'Imprimir datos de la tabla'
+                titleAttr: 'Imprimir datos de la tabla',
+                footer: true
             },
         ],
         responsive: true
