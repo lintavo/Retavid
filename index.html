@@ -169,7 +169,8 @@
               de PLG y CO debidamente ubicados en el tiempo, de acuerdo a las lecturas enviadas por el dispositivo 
               IoT, de esta forma puede evaluarse como hoscila la lectura de los mismos durante el día, la gráfica es 
               dinámica y aunque se presentan ambas lecturas al inicio puede separarse presionando sobre la leyenda 
-              de la gráfica y así ver solo los datos de PLG o CO según sea el caso.
+              de la gráfica y así ver solo los datos de PLG o CO según sea el caso. Hay una tercera tarjeta invisible 
+              que aparece cuando se presenta una lectura que indique peligro.
             </p>
           </div>
         </div>
@@ -216,14 +217,14 @@
           </div>
         </div>
         <!-- Section de alertas -->
-        <div class="card col-4 p-1 invisible">
+        <div id="card-alert" class="card col-4 p-1 invisible">
           <div id="alertas" class="card-img-top">
-
+            <img id="img-card-alert" src="" alt="" class="img-fluid">
           </div>
           <div class="card-body">
-            <h5 class="card-title text-center">Alerta</h5>
-            <p class="card-text">
-              ms.
+            <h5 id="card-title-alert" class="card-title text-center"></h5>
+            <p id="message-alert" class="card-text">
+              
             </p>
           </div>
         </div>
@@ -260,7 +261,7 @@
     <!-- Fin Sección análisis -->
 
     <!-- Inicio sección datos -->
-    <div class="container-fluid" id="data">
+    <div class="container-fluid mt-2" id="data">
       <div class="row card">
         <h1 class="text-center col-12">Datos históricos</h1>
         <hr><br>
@@ -274,7 +275,7 @@
     <!-- Fin Sección datos -->
 
     <!-- Inicio sección contactos -->
-    <div class="container-fluid" id="contacts">
+    <div class="container-fluid mt-2" id="contacts">
       <div class="row card">
         <h1 class="text-center col-12">Acerca de</h1>
         <hr><br>
