@@ -8,6 +8,7 @@ var chartLinesData1 = ['PLG'];
 var chartLinesData2 = ['CO'];
 var chartLinesX = [];
 var chartLines = [];
+var chartLinesCat = [];
 var table = [];
 var dataset;
 var lecterPLG = ['PLG'];
@@ -15,6 +16,7 @@ var lecterCO = ['CO'];
 var CO;
 var PLG;
 var date;
+var dateapp;
 var byetable;
 
 /* Recorrido de la página */
@@ -75,23 +77,28 @@ requestData = function(){
             var history = lecter[IoT].historico;
 
             for(any in history){
-                arr1 = Number(history[any].PLG);
-                chartLinesData1.push(arr1);
-
-                arr2 = Number(history[any].CO);
-                chartLinesData2.push(arr2);
-
-                arr3 = history[any].fecha + ' ' + history[any].hora;
-                chartLinesX.push(arr3);
- 
+                dateapp = moment().format('DD/MMMM/YYYY');
+                if (dateapp == history[any].fecha){
+                    arr1 = Number(history[any].PLG);
+                    chartLinesData1.push(arr1);
+    
+                    arr2 = Number(history[any].CO);
+                    chartLinesData2.push(arr2);
+    
+                    arr3 = history[any].fecha + ' ' + history[any].hora;
+                    chartLinesX.push(arr3);
+     
+                }
                 regt = [history[any].PLG, history[any].CO, history[any].fecha, history[any].hora];
                 table.push(regt);
             }
             llenarTabla();
             chartLines.push(chartLinesData1);
             chartLines.push(chartLinesData2);     
+            //chartLinesX.push(chartLinesCat);     
             chart.load({
-                columns: chartLines
+                columns: chartLines,
+                categories: chartLinesX
             });
         }
         
@@ -117,8 +124,7 @@ addChartLine = function() {
                 type: 'category',
                 categories: chartLinesX,
                 show: false,
-                rotated: false,
-                label: 'Fecha y hora de la lectura'
+                //label: 'Fecha y hora de la lectura'
             }
         }
     });
