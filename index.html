@@ -95,12 +95,6 @@
             </li>
           </ul>
         </div>
-        <!-- <ul class="collapse navbar-collapse mb-0 d-flex mb-lg-2">
-          <li class="nav-item"><a href="#" class="nav-link"><i class="bi bi-facebook"></i></a></li>
-          <li class="nav-item"><a href="#" class="nav-link"><i class="bi bi-twitter"></i></a></li>
-          <li class="nav-item"><a href="#" class="nav-link"><i class="bi bi-instagram"></i></a></li>
-          <li class="nav-item"><a href="#" class="nav-link"><i class="bi bi-github"></i></a></li>
-        </ul> -->
       </div>
     </nav>
     <!-- Final de menú principal -->
@@ -281,7 +275,19 @@
         <hr><br>
         <div class="card-body">
           <div id="">
-
+            <h5 class="text-center">RETAVID es un proyecto desarrollado para la Universidad Tecnológica de El Salvador</h5>
+            <p class="text-center">
+              <a class="btn border-0 btn-lg" href="https://www.facebook.com/universidadtecnologica" data-bs-toggle="tooltip" data-bs-placement="left" title="Facebook de la UTEC"><i class="bi bi-facebook"></i></a>
+              <a class="btn border-0 btn-lg" href="https://twitter.com/utecedusv" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter de la UTEC"><i class="bi bi-twitter"></i></a>
+              <a class="btn border-0 btn-lg" href="https://www.instagram.com/utecelsalvador/" data-bs-toggle="tooltip" data-bs-placement="top" title="Instagram de la UTEC"><i class="bi bi-instagram"></i></a>
+              <a class="btn border-0 btn-lg" href="https://www.youtube.com/user/UTECedusv" data-bs-toggle="tooltip" data-bs-placement="right" title="Canal de YouTube de la UTEC"><i class="bi bi-youtube"></i></a>
+            </p>
+            <p class="text-center">
+              Desarrollada por: Gustavo Enrique Tovar Ramos <br>
+              Contacta con el desarrollador para más información <a href="mailto:lintavo@gmail.com?subject=Información sobre aplicación RETAVID" data-bs-toggle="tooltip" data-bs-placement="right" title="Envía un correo al desarrollador"><i class="bi bi-envelope-exclamation"></i> lintavo@gmail.com</a><br>
+              Disponible en GitHub <a href="https://github.com/lintavo/Retavid.git" target="_blank" data-bs-toggle="tooltip" data-bs-placement="right" title="Repositorio de RETAVID en GitHub"><i class="bi bi-github"></i> </a>
+              
+            </p>
           </div>
         </div>
       </div>
@@ -305,6 +311,11 @@
     <script>
       const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
       const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
+    </script>
+    <!-- Habilita tooltips de bootstrap -->
+    <script>
+      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
     </script>
 </body>
 </html>
