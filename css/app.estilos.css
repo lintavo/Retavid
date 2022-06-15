@@ -15,6 +15,12 @@ Escritorio (XL para todos os dispositivos con resolución mayor a 1336px en adel
         width: 80%;
     }
 }
+
+.ahi:hover {
+    font-size: large;
+    color: red;
+}
+
 /*=============================================================================================
 Laptop (XL para todos os dispositivos con resolución mayor a 1336px en adelante
 =============================================================================================*/
@@ -75,5 +81,11 @@ Móvil vertical (para todos os dispositivos con resolución mayor a 320px en ade
     .logo-label {
         width: 100%;
         padding-top: 0px;
+    }
+    #table .btn-group {
+        visibility: collapse;
+    }
+    .btn h2 {
+        font-size: small;
     }
 }
