@@ -14,6 +14,7 @@ var lecterPLG = ['PLG'];
 var lecterCO = ['CO'];
 var CO;
 var PLG;
+var date;
 var byetable;
 
 /* Recorrido de la página */
@@ -24,8 +25,8 @@ $(document).ready(function() {
     addChartLine();
     addChartPLG();
     addChartCO();
-    //llenarTabla();
-    
+    date = new Date();
+    $('#año').html(date.getFullYear());
 });
 
 /* Función requestData */
@@ -69,7 +70,6 @@ requestData = function(){
         var arr2;
         var arr3;
         var regt;
-        //hakai();
 
         for(IoT in lecter){
             var history = lecter[IoT].historico;
