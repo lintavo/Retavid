@@ -82,4 +82,10 @@ Móvil vertical (para todos os dispositivos con resolución mayor a 320px en ade
         width: 100%;
         padding-top: 0px;
     }
+    #table .btn-group {
+        visibility: collapse;
+    }
+    .btn h2 {
+        font-size: small;
+    }
 }

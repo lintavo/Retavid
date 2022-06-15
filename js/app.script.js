@@ -236,7 +236,8 @@ llenarTabla = function() {
                 extend: 'print',
                 text: '<i class="bi bi-printer"></i> Imprimir',
                 titleAttr: 'Imprimir datos de la tabla',
-                footer: true
+                footer: true,
+                class: 'btn-sm'
             },
         ],
         responsive: true
