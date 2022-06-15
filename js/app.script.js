@@ -29,6 +29,7 @@ $(document).ready(function() {
     addChartCO();
     date = new Date();
     $('#año').html(date.getFullYear());
+    //puuu(15,22);
 });
 
 /* Función requestData */
@@ -56,6 +57,9 @@ requestData = function(){
         }
         lecterPLG.push(['PLG', Number(PLG)]);
         lecterCO.push(['CO', Number(CO)]);
+
+        var co = Number(CO);
+        var plg = Number(PLG);
 
         $('#plg-ultimate').html(lecter[ultimate].ultimoDato.fecha + ' ' + lecter[ultimate].ultimoDato.hora);
         $('#co-ultimate').html(lecter[ultimate].ultimoDato.fecha + ' ' + lecter[ultimate].ultimoDato.hora);
@@ -100,6 +104,7 @@ requestData = function(){
                 columns: chartLines,
                 categories: chartLinesX
             });
+            puuu(plg, co);
         }
         
         
@@ -244,15 +249,62 @@ llenarTabla = function() {
       });
 };
 
-/* Destruir tabla creada */
-/* hakai = function() {
-    byetable = $('#historico').DataTable( {
-        paging: false
-    } );
-     
-    byetable.destroy();
-     
-    byetable = $('#example').DataTable( {
-        searching: false
-    } );
-}; */
+/* Activar o no la tarjeta de alarmas */
+puuu = function(plg,co) {
+    switch (plg > 0 && co > 0) {
+        case (plg > 1000 && co > 100):
+            $('#card-alert').removeClass('invisible');
+            $('#card-title-alert').html(' Peligro');
+            $('#message-alert').html('Los niveles de PLG y CO se encuentran en estado crítico.');
+        break;
+
+        case (plg > 1000 && co > 70):
+            $('#card-alert').removeClass('invisible');
+            $('#card-title-alert').html(' Peligro');
+            $('#message-alert').html('El nivel de PLG se encuentra en estado crítico y el de CO se encuentra elevado');
+        break;
+
+        case (plg > 700 && co > 100):
+            $('#card-alert').removeClass('invisible');
+            $('#card-title-alert').html(' Peligro');
+            $('#message-alert').html('El nivel de PLG se encuentra elevado y el de CO se encuentra en estado crítico');
+        break;
+
+        case (plg > 1000):
+            $('#card-alert').removeClass('invisible');
+            $('#card-title-alert').html(' Peligro');
+            $('#message-alert').html('El nivel de PLG se encuentra en estado crítico.');
+        break;
+
+        case (co > 100):
+            $('#card-alert').removeClass('invisible');
+            $('#card-title-alert').html(' Peligro');
+            $('#message-alert').html('El nivel de CO se encuentra en estado crítico.');
+        break;
+
+        case (plg > 700 && co > 70):
+            $('#card-alert').removeClass('invisible');
+            $('#card-title-alert').html(' Alerta');
+            $('#message-alert').html('Los niveles de PLG y CO se encuentran muy elevados.');
+        break;
+
+        case (plg > 700):
+            $('#card-alert').removeClass('invisible');
+            $('#card-title-alert').html(' Alerta');
+            $('#message-alert').html('El nivel de PLG se encuentra muy elevado.');
+        break;
+
+        case (co > 70):
+            $('#card-alert').removeClass('invisible');
+            $('#card-title-alert').html(' Alerta');
+            $('#message-alert').html('El nivel de CO se encuentra muy elevado.');   
+        break;
+
+        default:
+            if ($('#card-alert').classListContains('invisible')) {
+
+            }else {
+                $('#card-alert').addClass('invisible'); 
+            }                   
+    }
+};
