@@ -148,9 +148,9 @@
           </div>
           <div class="offcanvas-body small">
             <p>
-              Esta es la herramienta principal, permite visulizar dos controles que muestran los niveles 
-              tanto de GLP como CO y muestran el uĺtimo registro enviado por el dispositivo IoT, el indicador 
-              de cada uno de los controles tiene tres niveles, con los colores del semáforo, para indicar si 
+              Esta es la herramienta principal, permite visulizar dos tarjetas en las que se muestran los niveles 
+              de PLG como CO, estos corresponden al uĺtimo registro enviado por el dispositivo IoT, el gráfico contenido 
+              de cada uno de las tarjetas posee tres niveles, con los colores del semáforo, que nos indican si 
               la lectura se encuentra en un nivel aceptable (<i class="bi bi-question-diamond-fill text-success"></i> 
               color verde), un nivel de alerta (<i class="bi bi-question-diamond-fill text-warning"></i> color naranja) 
               o si la lectura se ubica en un nivel muy peligroso (<i class="bi bi-question-diamond-fill text-danger"></i> color rojo).
@@ -165,9 +165,11 @@
           </div>
           <div class="offcanvas-body small">
             <p>
-              Esta herramienta muestra un gráfico de líneas, en una de ellas se muestran los registros diarios 
-              de GLP y CO debidamente ubicados en el tiempo de acuerdo a las lecturas enviadas por el dispositivo 
-              IoT, de esta forma puede evaluarse como hoscila la lectura de los mismos durante el día.
+              Esta herramienta, muestra un gráfico de líneas, en cada una de ellas se muestran los registros diarios 
+              de PLG y CO debidamente ubicados en el tiempo, de acuerdo a las lecturas enviadas por el dispositivo 
+              IoT, de esta forma puede evaluarse como hoscila la lectura de los mismos durante el día, la gráfica es 
+              dinámica y aunque se presentan ambas lecturas al inicio puede separarse presionando sobre la leyenda 
+              de la gráfica y así ver solo los datos de PLG o CO según sea el caso.
             </p>
           </div>
         </div>
@@ -179,9 +181,15 @@
           </div>
           <div class="offcanvas-body small">
             <p>
-              Esta herramienta presenta la totalidad de los datos históricos enviados por el dispositivo IoT 
-              en forma de una tabla que permite hacer búsquedas,ordenar resultados y exportar la información 
-              a diferentes formatos.
+              Esta herramienta presenta la totalidad de los datos históricos en el momento en el que carga la página, 
+              estos constituyen la totalidad de los datos que han sido enviados por el dispositivo IoT y que se encuentran 
+              en la base de datos, estos se presentan en forma de una tabla, en ella, se pueden hacer búsquedas, ordenar el resultado 
+              por colummnas y exportar toda la información a diferentes formatos, entre ellos: CSV, JSON e incluso como hoja 
+              de cálculo de Microsoft Excel, también puede copiarse toda la información e imprimirla.
+            </p>
+            <p>
+              <strong>Nota:</strong> Si ya se lleva tiempo con la aplicación cargada, es recomentable recargarla 
+              en el navegador para tener acceso a los últimos registros.
             </p>
           </div>
         </div>
