@@ -301,10 +301,8 @@ puuu = function(plg,co) {
         break;
 
         default:
-            if ($('#card-alert').classListContains('invisible')) {
-
-            }else {
-                $('#card-alert').addClass('invisible'); 
-            }                   
+            $('#card-alert').addClass('invisible');                   
     }
+
+    return true;
 };
