@@ -1,0 +1,46 @@
+{
+    "name": "Real time application for visualitation data from IoT dispositive",
+    "short_name": "RETAVID",
+    "start_url": "https://lintavo.github.io/Retavid/",
+    "display": "browser",
+    "background_color": "#ffffff",
+    "description": "Es una aplicaci\u00f3n en tiempo real que tiene como prop\u00f3sito principal, contribuir a la seguridad industrial en el rubro del manejo, almacenanaje y distribuci\u00f3nde gas propano en El Salvador, esta, realiza una lectura en tiempo real de un dispositivo IoT en una locaci\u00f3n en espec\u00edfico, este dispositivo se encuentra equipado con sensores de GLP (Gas licuado de petr\u00f3leo) y CO (Mon\u00f3xido de carbono) y env\u00eda peri\u00f3dicamente lecturas en ppa (partes por mill\u00f3n), de esta forma si se detecta una concentraci\u00f3n de cualquiera de \u00e9stos compuestos, se puede ver la variaci\u00f3n a trav\u00e9s de la aplicaci\u00f3n RETAVID e intervenir de inmediato para evitar un siniestro en cualquiera de los centros antes referidos.",
+    "dir": "auto",
+    "categories": "security,utilities",
+    "lang": "es",
+    "orientation": "any",
+    "scope": "/",
+    "theme_color": "#000000",
+    "icons": [
+        {
+            "src": "/icon_48x48.png",
+            "sizes": "48x48",
+            "type": "image/png"
+        },
+        {
+            "src": "/icon_72x72.png",
+            "sizes": "72x72",
+            "type": "image/png"
+        },
+        {
+            "src": "/icon_96x96.png",
+            "sizes": "96x96",
+            "type": "image/png"
+        },
+        {
+            "src": "/icon_144x144.png",
+            "sizes": "144x144",
+            "type": "image/png"
+        },
+        {
+            "src": "/icon_168x168.png",
+            "sizes": "168x168",
+            "type": "image/png"
+        },
+        {
+            "src": "/icon_192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        }
+    ]
+}
