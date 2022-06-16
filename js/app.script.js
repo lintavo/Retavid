@@ -38,12 +38,10 @@ requestData = function(){
     var IoT;
     var any;
 
-    //$("#spinner").addClass('visible');
-
     myFirebaseRef.on("value", function(data) {
         var lecter = data.val();
-        //var arr;
         var ultimate;
+
         chartLines=[];
         chartLinesData1 = ['PLG'];
         chartLinesData2 = ['CO'];
@@ -98,22 +96,13 @@ requestData = function(){
             }
             llenarTabla();
             chartLines.push(chartLinesData1);
-            chartLines.push(chartLinesData2);     
-            //chartLinesX.push(chartLinesCat);     
+            chartLines.push(chartLinesData2);         
             chart.load({
                 columns: chartLines,
                 categories: chartLinesX
             });
             puuu(plg, co);
         }
-        
-        
-        //$("#total span").html(total);
-
-        //chart.load({
-        //    columns: chartLinesData
-        //});//Carga el gráfico con los datos obtenidos en el arreglo
-        //$("#spinner").addClass('invisible');
     });
 };
 
@@ -128,12 +117,10 @@ addChartLine = function() {
             x: {
                 type: 'category',
                 categories: chartLinesX,
-                show: false,
-                //label: 'Fecha y hora de la lectura'
+                show: false
             }
         }
     });
-    //console.log(chartLinesData1);
 };
 
 /* Función para gráfica de monitoreo PGL */
@@ -157,7 +144,6 @@ addChartPLG = function() {
             }
         }
       });
-      console.log(lecterPLG);
 };
 
 /* Función para gráfica de monitoreo PGL */
@@ -181,7 +167,6 @@ addChartCO = function() {
           }
       }
     });
-    console.log(lecterCO);
 };
 
 /* LLenar tabla con datos */
@@ -247,6 +232,7 @@ llenarTabla = function() {
         ],
         responsive: true
       });
+      return true;
 };
 
 /* Activar o no la tarjeta de alarmas */
