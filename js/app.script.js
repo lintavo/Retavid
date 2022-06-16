@@ -232,7 +232,7 @@ llenarTabla = function() {
         ],
         responsive: true
       });
-      return true;
+      //return true;
 };
 
 /* Activar o no la tarjeta de alarmas */
@@ -290,5 +290,5 @@ puuu = function(plg,co) {
             $('#card-alert').addClass('invisible');                   
     }
 
-    return true;
+    //return true;
 };
